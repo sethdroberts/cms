@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>File CMS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/app.css') }}">
+  </head>
+  <body>
+    <header>
+    </header>
+    {% for message in get_flashed_messages() %}
+    <div class="message">
+        <p>{{ message }}</p>
+      </div>
+    {% endfor %}
+    <main>
+      {% block content %}
+      <!-- Filled in by the `content` block from another template file -->
+      {% endblock %}
+    </main>
+  </body>
+</html>
